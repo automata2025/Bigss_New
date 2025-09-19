@@ -6,10 +6,8 @@ using UnityEngine;
 public class P_Control : MonoBehaviour
 {
     [SerializeField] private int crabAmounts = 4;
-
     [SerializeField] private float moveSpeed = 50f;
-    [SerializeField] private float maxSpeed = 15f;
-    [SerializeField] private float drag = 0.98f;
+    
     [SerializeField] private float steerAngle = 20f;
     [SerializeField] private float Traction = 1f;
 
@@ -104,6 +102,8 @@ public class P_Control : MonoBehaviour
                     point = Vector3.Lerp(positionsHistory[indexA], positionsHistory[indexB], delayFromHead / recordInterval);
                 }
             }
+
+            Vector3 fakeVelocity = (point - body.transform.position) / Time.deltaTime;
 
             Vector3 moveDireaction = point - body.transform.position;
             body.transform.position += moveDireaction * miniCrabSpeed * Time.deltaTime;
