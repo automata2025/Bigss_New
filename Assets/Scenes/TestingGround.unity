@@ -232,7 +232,10 @@ MonoBehaviour:
   Traction: 1
   miniCrabSpeed: 5
   gap: 60
+  crabTimeGap: 0.3
   crabPrefab: {fileID: 545682315351394890, guid: 59a51997eb082e449b7eff675857e1ff, type: 3}
+  positionsHistory: []
+  recordInterval: 0.1
 --- !u!1001 &261883423
 PrefabInstance:
   m_ObjectHideFlags: 0
