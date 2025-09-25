@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5685039372606903321}
   - component: {fileID: 1330715423185666091}
   - component: {fileID: 5695863503302891711}
+  - component: {fileID: 9013051769820162146}
+  - component: {fileID: 2615540280252577481}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -82,6 +84,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.48, z: 0}
+--- !u!114 &9013051769820162146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129451930308481260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c13438496f08bd4eb85f4f9fc1e8f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crabAmounts: 4
+  moveSpeed: 20
+  steerAngle: 10
+  Traction: 2
+  miniCrabSpeed: 5
+  crabTimeGap: 0.3
+  crabPrefab: {fileID: 545682315351394890, guid: 59a51997eb082e449b7eff675857e1ff, type: 3}
+  positionsHistory: []
+  recordInterval: 0.1
+--- !u!114 &2615540280252577481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129451930308481260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6a34be39041ba14aa8d1954d3ad9896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detachKey: 32
+  velocityScale: 1
+  minSpeed: 4
+  maxSpeed: 40
+  addUpwardKick: 1
+  upwardKick: 1.5
+  rbMass: 1
+  rbDrag: 0
+  rbAngularDrag: 0.05
+  bounceMaterial: {fileID: 0}
+  colliderCenter: {x: 0, y: 0.2, z: 0}
+  colliderRadius: 0.2
+  explodeOnLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  detachedLayerName: DetachedCrab
+  maxBounces: 2
+  maxLifetime: 6
 --- !u!1001 &6972179490572787191
 PrefabInstance:
   m_ObjectHideFlags: 0
