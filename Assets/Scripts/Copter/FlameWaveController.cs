@@ -1,15 +1,20 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class FlameWaveController : MonoBehaviour
 {
     [Header("Assign your turrets' flame particle systems")]
-    public ParticleSystem[] turrets;   // drag your 6 turret particle systems here
+    [SerializeField] private ParticleSystem[] turrets;   // private backing field
 
     [Header("Wave settings")]
-    public float delayBetweenTurrets = 0.3f; // time between each turret firing
-    public float flameDuration = 1.0f;       // how long each flame stays on
-    public float wavePause = 0.5f;           // pause after turret 6 before restarting
+    [SerializeField] private float delayBetweenTurrets = 0.3f;
+    [SerializeField] private float flameDuration = 1.0f;
+    [SerializeField] private float wavePause = 0.5f;
+
+    public ParticleSystem[] Turrets => turrets;   // expression-bodied property
+    public float DelayBetweenTurrets { get => delayBetweenTurrets; set => delayBetweenTurrets = value; }
+    public float FlameDuration { get => flameDuration; set => flameDuration = value; }
+    public float WavePause { get => wavePause; set => wavePause = value; }
 
     void Start()
     {
@@ -20,17 +25,17 @@ public class FlameWaveController : MonoBehaviour
     {
         while (true) // loop forever
         {
-            for (int i = 0; i < turrets.Length; i++)
+            for (int i = 0; i < Turrets.Length; i++)
             {
-                if (turrets[i] != null)
+                if (Turrets[i] != null)
                 {
-                    turrets[i].Play();
-                    StartCoroutine(StopAfterTime(turrets[i], flameDuration));
+                    Turrets[i].Play();
+                    StartCoroutine(StopAfterTime(Turrets[i], FlameDuration));
                 }
-                yield return new WaitForSeconds(delayBetweenTurrets);
+                yield return new WaitForSeconds(DelayBetweenTurrets);
             }
 
-            yield return new WaitForSeconds(wavePause);
+            yield return new WaitForSeconds(WavePause);
         }
     }
 
