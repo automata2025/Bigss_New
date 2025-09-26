@@ -52,7 +52,6 @@ public class CrabPartProjectile : MonoBehaviour
         _life += Time.deltaTime;
         if (_life >= _maxLife)
         {
-            // Timeout detonation (no direct collider)
             Explode(transform.position, -transform.forward, null);
         }
     }
@@ -81,25 +80,21 @@ public class CrabPartProjectile : MonoBehaviour
         }
     }
 
-    // ---- Minimal detonation + direct-hit notify ----
     private void Explode(Vector3 point, Vector3 normal, Collider directHit)
     {
         if (!_active) return;
         _active = false;
 
-        // Build a simple impact context (radius=0 means “direct hit only”)
         Vector3 incomingVel = _rb != null ? _rb.velocity : Vector3.zero;
         var ctx = new CrabImpactContext(point,normal,incomingVel,energy: 1f, radius: 0f,instigator: gameObject,projectile: gameObject);
 
-        // Notify the collider we actually struck (so walls can destroy themselves)
         NotifyHandlersOnCollider(directHit, ctx);
 
-        // Clean up projectile
         if (_rb != null) _rb.isKinematic = true;
         Destroy(gameObject);
     }
 
-    private void Explode() // keep your original signature for internal calls
+    private void Explode()
     {
         Explode(transform.position, -transform.forward, null);
     }
@@ -112,7 +107,7 @@ public class CrabPartProjectile : MonoBehaviour
         for (int i = 0; i < _handlerCache.Count; i++)
         {
             bool consumed = _handlerCache[i].OnCrabImpact(ctx);
-            if (consumed) break; // stop if someone consumes it
+            if (consumed) break; 
         }
         _handlerCache.Clear();
     }

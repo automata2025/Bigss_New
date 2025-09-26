@@ -17,15 +17,15 @@ public class CrabChainDetacher : MonoBehaviour
     [SerializeField] private float rbMass = 1f;
     [SerializeField] private float rbDrag = 0f;
     [SerializeField] private float rbAngularDrag = 0.05f;
-    [SerializeField] private PhysicMaterial bounceMaterial; // optional; assign a bouncy material in Inspector
+    [SerializeField] private PhysicMaterial bounceMaterial; 
     [SerializeField] private Vector3 colliderCenter = new Vector3(0, 0.2f, 0);
     [SerializeField] private float colliderRadius = 0.2f;
-    [SerializeField] private LayerMask explodeOnLayers;   // walls/lasers etc.
-    [SerializeField] private string detachedLayerName = "DetachedCrab"; // optional layer
+    [SerializeField] private LayerMask explodeOnLayers;   
+    [SerializeField] private string detachedLayerName = "DetachedCrab"; 
 
     [Header("Lifetime")]
-    [SerializeField] private int maxBounces = 2;      // explode after this many bounces if not already
-    [SerializeField] private float maxLifetime = 6f;  // safety despawn
+    [SerializeField] private int maxBounces = 2;      
+    [SerializeField] private float maxLifetime = 6f;
 
     private P_Control_Physics _ctrl;
 
@@ -44,15 +44,12 @@ public class CrabChainDetacher : MonoBehaviour
     {
         if (!_ctrl.TryDetachLast(out Transform seg)) return false;
 
-        // Compute the delay for the segment we just removed:
-        // old index = (new follower count) + 1 -> delay = gap * (index)
-        int currentCount = _ctrl.FollowerCount; // after removal
+       
+        int currentCount = _ctrl.FollowerCount; 
         float delay = _ctrl.CrabTimeGap * (currentCount + 1);
 
-        // Sample position at delay (your exact algorithm via helper)
         Vector3 p1 = _ctrl.SamplePointAtDelay(delay);
 
-        // Derive direction/speed from a nearby earlier sample (finite difference)
         float segmentDt = (delay <= _ctrl.HeadToRecord) ? _ctrl.HeadToRecord : _ctrl.RecordInterval;
         float h = Mathf.Max(0.0001f, segmentDt * 0.5f);
         Vector3 p0 = _ctrl.SamplePointAtDelay(delay + h);
@@ -65,23 +62,19 @@ public class CrabChainDetacher : MonoBehaviour
         Vector3 launchVel = dir * launchSpeed;
         if (addUpwardKick) launchVel += Vector3.up * upwardKick;
 
-        // Place the segment at the sampled position & facing
         seg.position = p1;
         seg.rotation = Quaternion.LookRotation(dir, Vector3.up);
         seg.SetParent(null);
 
-        // Ensure physics components exist & are enabled
         Rigidbody segRb = EnsureRigidbody(seg.gameObject);
         Collider segCol = EnsureCollider(seg.gameObject);
 
-        // Optional: move to a dedicated layer
         if (!string.IsNullOrEmpty(detachedLayerName))
         {
             int layerIdx = LayerMask.NameToLayer(detachedLayerName);
             if (layerIdx >= 0) seg.gameObject.layer = layerIdx;
         }
 
-        // Hand off to projectile behavior
         var proj = seg.GetComponent<CrabPartProjectile>();
         if (proj == null) proj = seg.gameObject.AddComponent<CrabPartProjectile>();
         proj.Configure(segRb, segCol, explodeOnLayers, maxBounces, maxLifetime);
