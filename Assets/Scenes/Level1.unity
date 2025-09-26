@@ -72178,7 +72178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5685039372606903321, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.8
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 5685039372606903321, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -72186,7 +72186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5685039372606903321, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.9
+      value: -22.8
       objectReference: {fileID: 0}
     - target: {fileID: 5685039372606903321, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -72225,12 +72225,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9013051769820162146, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
+      propertyPath: Traction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9013051769820162146, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9013051769820162146, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: steerAngle
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9013051769820162146, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: crabAmounts
