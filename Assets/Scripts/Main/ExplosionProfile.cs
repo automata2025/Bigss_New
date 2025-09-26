@@ -6,14 +6,14 @@ public class ExplosionProfile : ScriptableObject
 {
     [Header("Strength")]
     [SerializeField] private float baseRadius = 2.5f;
-    [SerializeField] private float baseEnergy = 1.0f; // drives ctx.energy
+    [SerializeField] private float baseEnergy = 1.0f; 
 
-    [Header("Physics Impulse (optional)")]
+    
     [SerializeField] private bool applyPhysicsImpulse = true;
     [SerializeField] private float force = 12f;
     [SerializeField] private float upwardModifier = 0.0f;
 
-    [Header("FX (optional)")]
+    [Header("FX")]
     [SerializeField] private GameObject vfxPrefab;
     [SerializeField] private AudioClip sfx;
 
