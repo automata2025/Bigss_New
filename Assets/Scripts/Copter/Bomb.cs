@@ -2,76 +2,55 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [Header("Explosion Settings")]
-    public float explosionRadius = 5f;
-    public float explosionForce = 700f;
-    public LayerMask affectedLayers;
-    public GameObject explosionEffectPrefab;
-    public float deactivateDelay = 0.2f;
+    [Header("Bomb Settings")]
+    [SerializeField] private float deactivateDelay = 0.2f;
 
-    private Rigidbody rb;
-    private BombPool pool;
+    private Rigidbody _rigidbody;
+    private BombPool _pool;
 
-    void Awake()
+    public Rigidbody Rigidbody => _rigidbody;
+    public BombPool Pool => _pool;
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
-        // Reset physics state
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.useGravity = true;
-        rb.isKinematic = false;
+        _rigidbody.isKinematic = false;
+        _rigidbody.useGravity = true;
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
 
-        // Re-enable visuals/collisions
-        var rend = GetComponent<Renderer>();
-        if (rend != null) rend.enabled = true;
-        var col = GetComponent<Collider>();
-        if (col != null) col.enabled = true;
+        if (TryGetComponent(out Renderer rend)) rend.enabled = true;
+        if (TryGetComponent(out Collider col)) col.enabled = true;
     }
 
-    public void AssignPool(BombPool bombPool)
+    public void AssignPool(BombPool pool)
     {
-        pool = bombPool;
+        _pool = pool;
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        Explode();
-    }
-
-    void Explode()
-    {
-        // Visual explosion effect
-        if (explosionEffectPrefab != null)
-            Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
-
-        // Apply physics force to nearby rigidbodies
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius, affectedLayers);
-        foreach (Collider col in colliders)
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            Rigidbody r = col.attachedRigidbody;
-            if (r != null)
-                r.AddExplosionForce(explosionForce, transform.position, explosionRadius, 1f, ForceMode.Impulse);
+            Disappear();
         }
-
-        // Disable this bomb visually
-        var rend = GetComponent<Renderer>();
-        if (rend != null) rend.enabled = false;
-        var c = GetComponent<Collider>();
-        if (c != null) c.enabled = false;
-        rb.isKinematic = true;
-
-        // Return to pool after short delay
-        Invoke(nameof(ReturnToPool), deactivateDelay);
     }
 
-    void ReturnToPool()
+    private void Disappear()
     {
-        if (pool != null)
-            pool.ReturnBomb(gameObject);
+        if (TryGetComponent(out Renderer rend)) rend.enabled = false;
+        if (TryGetComponent(out Collider col)) col.enabled = false;
+
+        _rigidbody.velocity = Vector3.zero;
+        _rigidbody.angularVelocity = Vector3.zero;
+        _rigidbody.isKinematic = true;
+
+        if (_pool != null)
+            _pool.ReturnBomb(gameObject);
         else
             gameObject.SetActive(false);
     }
