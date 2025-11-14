@@ -3,7 +3,8 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     [Header("Bomb Settings")]
-    [SerializeField] private float deactivateDelay = 0.2f;
+    [SerializeField] private float _deactivateDelay = 0.2f;
+    public float DeactivateDelay => _deactivateDelay;
 
     private Rigidbody _rigidbody;
     private BombPool _pool;
