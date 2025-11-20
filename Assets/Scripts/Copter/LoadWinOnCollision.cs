@@ -9,7 +9,20 @@ public class LoadWinOnCollision : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            UnlockNewLevel(); // says to unlocked
             SceneManager.LoadScene(winSceneName);
+        }
+    }
+
+    // this void unlock new level
+    void UnlockNewLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
+        {
+            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.Save();
+
         }
     }
 }
