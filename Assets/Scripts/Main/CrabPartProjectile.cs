@@ -1,9 +1,12 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[DisallowMultipleComponent]
 public class CrabPartProjectile : MonoBehaviour
 {
+    [Header("Debug")]
+    [SerializeField] private bool logImpacts = false;
+
     private Rigidbody _rb;
     private Collider _col;
 
@@ -15,10 +18,28 @@ public class CrabPartProjectile : MonoBehaviour
 
     private bool _active;
 
-    // Small cache to avoid GC when notifying handlers
-    private static readonly List<ICrabImpactHandler> _handlerCache = new List<ICrabImpactHandler>(8);
+   
+    private static readonly List<ICrabImpactHandler> HandlerCache = new List<ICrabImpactHandler>(8);
 
-    public void Configure(Rigidbody rb, Collider col, LayerMask explodeMask, int maxBounces, float maxLife)
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody>() ?? _rb;
+        _col = GetComponent<Collider>() ?? _col;
+    }
+
+    private void OnEnable()
+    {
+        _life = 0f;
+        _bounceCount = 0;
+        _active = false;
+    }
+
+    public void Configure(
+        Rigidbody rb,
+        Collider col,
+        LayerMask explodeMask,
+        int maxBounces,
+        float maxLife)
     {
         _rb = rb;
         _col = col;
@@ -31,6 +52,7 @@ public class CrabPartProjectile : MonoBehaviour
     {
         if (_rb == null || _col == null)
         {
+            Debug.LogWarning($"{nameof(CrabPartProjectile)} on {name} activated without Rigidbody/Collider.");
             return;
         }
 
@@ -63,9 +85,9 @@ public class CrabPartProjectile : MonoBehaviour
         int otherLayer = collision.collider.gameObject.layer;
         bool isExplodeLayer = ((_explodeMask.value & (1 << otherLayer)) != 0);
 
-        // Contact data for direct-hit notify
-        Vector3 hitPoint = collision.GetContact(0).point;
-        Vector3 hitNormal = collision.GetContact(0).normal;
+        ContactPoint contact = collision.GetContact(0);
+        Vector3 hitPoint = contact.point;
+        Vector3 hitNormal = contact.normal;
 
         if (isExplodeLayer)
         {
@@ -86,11 +108,29 @@ public class CrabPartProjectile : MonoBehaviour
         _active = false;
 
         Vector3 incomingVel = _rb != null ? _rb.velocity : Vector3.zero;
-        var ctx = new CrabImpactContext(point,normal,incomingVel,energy: 1f, radius: 0f,instigator: gameObject,projectile: gameObject);
+
+        var ctx = new CrabImpactContext(
+            point: point,
+            normal: normal,
+            incomingVel: incomingVel,
+            energy: 1f,
+            radius: 0f,
+            instigator: gameObject,
+            projectile: gameObject
+        );
+
+        if (logImpacts)
+        {
+            Debug.Log(
+                $"Crab impact at {ctx.Point} with vel {ctx.IncomingVel.magnitude:F2}",
+                this);
+        }
 
         NotifyHandlersOnCollider(directHit, ctx);
 
-        if (_rb != null) _rb.isKinematic = true;
+        if (_rb != null)
+            _rb.isKinematic = true;
+
         Destroy(gameObject);
     }
 
@@ -99,16 +139,17 @@ public class CrabPartProjectile : MonoBehaviour
         Explode(transform.position, -transform.forward, null);
     }
 
-    private void NotifyHandlersOnCollider(Collider col, CrabImpactContext ctx)
+    private static void NotifyHandlersOnCollider(Collider col, CrabImpactContext ctx)
     {
         if (col == null) return;
 
-        col.GetComponentsInChildren(true, _handlerCache);
-        for (int i = 0; i < _handlerCache.Count; i++)
+        col.GetComponentsInChildren(true, HandlerCache);
+        for (int i = 0; i < HandlerCache.Count; i++)
         {
-            bool consumed = _handlerCache[i].OnCrabImpact(ctx);
-            if (consumed) break; 
+            bool consumed = HandlerCache[i].OnCrabImpact(ctx);
+            if (consumed) break;
         }
-        _handlerCache.Clear();
+        HandlerCache.Clear();
     }
 }
+

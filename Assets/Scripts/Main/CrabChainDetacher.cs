@@ -4,6 +4,7 @@ using UnityEngine;
 public class CrabChainDetacher : MonoBehaviour
 {
     [Header("Input")]
+    [SerializeField] private bool handleInput = true;
     [SerializeField] private KeyCode detachKey = KeyCode.Space;
 
     [Header("Launch")]
@@ -17,14 +18,14 @@ public class CrabChainDetacher : MonoBehaviour
     [SerializeField] private float rbMass = 1f;
     [SerializeField] private float rbDrag = 0f;
     [SerializeField] private float rbAngularDrag = 0.05f;
-    [SerializeField] private PhysicMaterial bounceMaterial; 
+    [SerializeField] private PhysicMaterial bounceMaterial;
     [SerializeField] private Vector3 colliderCenter = new Vector3(0, 0.2f, 0);
     [SerializeField] private float colliderRadius = 0.2f;
-    [SerializeField] private LayerMask explodeOnLayers;   
-    [SerializeField] private string detachedLayerName = "DetachedCrab"; 
+    [SerializeField] private LayerMask explodeOnLayers;
+    [SerializeField] private string detachedLayerName = "DetachedCrab";
 
     [Header("Lifetime")]
-    [SerializeField] private int maxBounces = 2;      
+    [SerializeField] private int maxBounces = 2;
     [SerializeField] private float maxLifetime = 6f;
 
     private P_Control_Physics _ctrl;
@@ -36,16 +37,20 @@ public class CrabChainDetacher : MonoBehaviour
 
     private void Update()
     {
+        if (!handleInput) return;
+
         if (Input.GetKeyDown(detachKey))
+        {
             DetachLastSegment();
+        }
     }
 
     public bool DetachLastSegment()
     {
-        if (!_ctrl.TryDetachLast(out Transform seg)) return false;
+        if (!_ctrl.TryDetachLast(out Transform seg))
+            return false;
 
-       
-        int currentCount = _ctrl.FollowerCount; 
+        int currentCount = _ctrl.FollowerCount;
         float delay = _ctrl.CrabTimeGap * (currentCount + 1);
 
         Vector3 p1 = _ctrl.SamplePointAtDelay(delay);
@@ -77,6 +82,7 @@ public class CrabChainDetacher : MonoBehaviour
 
         var proj = seg.GetComponent<CrabPartProjectile>();
         if (proj == null) proj = seg.gameObject.AddComponent<CrabPartProjectile>();
+
         proj.Configure(segRb, segCol, explodeOnLayers, maxBounces, maxLifetime);
         proj.Activate(launchVel);
 
@@ -85,8 +91,7 @@ public class CrabChainDetacher : MonoBehaviour
 
     private Rigidbody EnsureRigidbody(GameObject go)
     {
-        var rb = go.GetComponent<Rigidbody>();
-        if (rb == null) rb = go.AddComponent<Rigidbody>();
+        var rb = go.GetComponent<Rigidbody>() ?? go.AddComponent<Rigidbody>();
 
         rb.mass = rbMass;
         rb.drag = rbDrag;

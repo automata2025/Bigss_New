@@ -2,22 +2,38 @@ using UnityEngine;
 
 public class DestructibleWall : MonoBehaviour, ICrabImpactHandler
 {
-    [SerializeField] private float requiredEnergy = 0.4f; 
+    [Header("Gameplay")]
+    [SerializeField] private float requiredEnergy = 0.4f;
     [SerializeField] private int hitPoints = 1;
+
+    [Header("FX")]
     [SerializeField] private GameObject breakVfx;
+
+    private bool _destroyed;
+
+    public bool IsAlive => !_destroyed && hitPoints > 0;
 
     public bool OnCrabImpact(CrabImpactContext ctx)
     {
-        if (ctx.energy < requiredEnergy) return false; 
+        if (!IsAlive)
+            return false;
+
+        if (ctx.Energy < requiredEnergy)
+            return false;
 
         hitPoints--;
-        if (hitPoints <= 0)
+        if (hitPoints > 0)
+            return true; // we consumed the hit but are still alive
+
+        // Kill
+        _destroyed = true;
+
+        if (breakVfx != null)
         {
-            if (breakVfx) Instantiate(breakVfx, ctx.point, Quaternion.identity);
-            Destroy(gameObject);
-            return true; 
+            Instantiate(breakVfx, ctx.Point, Quaternion.identity);
         }
-        return true; 
+
+        Destroy(gameObject);
+        return true;
     }
 }
-
