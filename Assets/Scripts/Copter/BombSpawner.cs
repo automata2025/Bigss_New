@@ -1,39 +1,41 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BombSpawner : MonoBehaviour
 {
-    [Header("Spawn Settings")]
-    public BombPool bombPool;
-    public Transform spawnPoint;
-    public float spawnHeight = 50f;
-    public float spawnInterval = 2f;
-    public float spacing = 3f; // distance between each bomb in the line
+    [Header("Grid Settings")]
+    public float BombSpacing = 5f;
+    public int Rows = 3;
+    public int Cols = 3;
 
-    private float timer;
+    [Header("Drop Settings")]
+    [SerializeField] private float dropHeight = 20f;
 
-    void Update()
+    [Header("References")]
+    [SerializeField] private BombPool bombPool;
+
+    private void Start()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnInterval)
-        {
-            timer = 0f;
-            Drop3BombsInFormation();
-        }
+        // Drop immediately once
+        DropBombGrid(new Vector3(transform.position.x, 0f, transform.position.z));
     }
 
-    void Drop3BombsInFormation()
+    private void DropBombGrid(Vector3 center)
     {
-        Vector3 basePos = spawnPoint
-            ? spawnPoint.position + Vector3.up * spawnHeight
-            : transform.position + Vector3.up * spawnHeight;
+        float startX = center.x - ((Cols - 1) * BombSpacing) / 2f;
+        float startZ = center.z - ((Rows - 1) * BombSpacing) / 2f;
 
-        // Spawn left, center, and right bombs
-        Vector3 left = basePos + transform.right * -spacing;
-        Vector3 center = basePos;
-        Vector3 right = basePos + transform.right * spacing;
+        for (int r = 0; r < Rows; r++)
+        {
+            for (int c = 0; c < Cols; c++)
+            {
+                Vector3 pos = new Vector3(
+                    startX + c * BombSpacing,
+                    dropHeight,
+                    startZ + r * BombSpacing
+                );
 
-        bombPool.GetBomb(left, Quaternion.identity);
-        bombPool.GetBomb(center, Quaternion.identity);
-        bombPool.GetBomb(right, Quaternion.identity);
+                bombPool.GetBomb(pos, Quaternion.identity);
+            }
+        }
     }
 }
