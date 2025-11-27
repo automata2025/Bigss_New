@@ -8,7 +8,7 @@ public class CrabChainDetacher : MonoBehaviour
     [SerializeField] private KeyCode detachKey = KeyCode.Space;
 
     [Header("Launch")]
-    [SerializeField] private float velocityScale = 1.0f; // 1.0 uses history speed; >1 boosts
+    [SerializeField] private float velocityScale = 1.0f; // 1.0 = raw history speed
     [SerializeField] private float minSpeed = 4f;
     [SerializeField] private float maxSpeed = 40f;
     [SerializeField] private bool addUpwardKick = false;
@@ -33,43 +33,63 @@ public class CrabChainDetacher : MonoBehaviour
     private void Awake()
     {
         _ctrl = GetComponent<P_Control_Physics>();
+        if (_ctrl == null)
+        {
+            Debug.LogError(
+                $"{nameof(CrabChainDetacher)} needs {nameof(P_Control_Physics)} on the same GameObject.",
+                this);
+        }
     }
 
     private void Update()
     {
         if (!handleInput) return;
-
         if (Input.GetKeyDown(detachKey))
         {
             DetachLastSegment();
         }
     }
 
+
     public bool DetachLastSegment()
     {
-        if (!_ctrl.TryDetachLast(out Transform seg))
+        if (_ctrl == null)
             return false;
+
+        if (!_ctrl.TryDetachLast(out Transform seg) || seg == null)
+            return false;
+
+ 
 
         int currentCount = _ctrl.FollowerCount;
         float delay = _ctrl.CrabTimeGap * (currentCount + 1);
 
         Vector3 p1 = _ctrl.SamplePointAtDelay(delay);
 
-        float segmentDt = (delay <= _ctrl.HeadToRecord) ? _ctrl.HeadToRecord : _ctrl.RecordInterval;
+        float segmentDt = (delay <= _ctrl.HeadToRecord)
+            ? _ctrl.HeadToRecord
+            : _ctrl.RecordInterval;
+
         float h = Mathf.Max(0.0001f, segmentDt * 0.5f);
         Vector3 p0 = _ctrl.SamplePointAtDelay(delay + h);
 
         Vector3 vHist = (p1 - p0);
         float speed = vHist.magnitude / h;
-        Vector3 dir = vHist.sqrMagnitude > 1e-8f ? vHist.normalized : seg.forward;
+        Vector3 dir = vHist.sqrMagnitude > 1e-8f
+            ? vHist.normalized
+            : seg.forward;
 
         float launchSpeed = Mathf.Clamp(speed * velocityScale, minSpeed, maxSpeed);
         Vector3 launchVel = dir * launchSpeed;
-        if (addUpwardKick) launchVel += Vector3.up * upwardKick;
+        if (addUpwardKick)
+            launchVel += Vector3.up * upwardKick;
+
 
         seg.position = p1;
         seg.rotation = Quaternion.LookRotation(dir, Vector3.up);
         seg.SetParent(null);
+
+   
 
         Rigidbody segRb = EnsureRigidbody(seg.gameObject);
         Collider segCol = EnsureCollider(seg.gameObject);
@@ -77,11 +97,19 @@ public class CrabChainDetacher : MonoBehaviour
         if (!string.IsNullOrEmpty(detachedLayerName))
         {
             int layerIdx = LayerMask.NameToLayer(detachedLayerName);
-            if (layerIdx >= 0) seg.gameObject.layer = layerIdx;
+            if (layerIdx >= 0)
+                seg.gameObject.layer = layerIdx;
         }
 
+        Debug.Log(
+            $"Detached {seg.name}. Rigidbody: {segRb != null}, Collider: {segCol != null}",
+            seg);
+
+     
+
         var proj = seg.GetComponent<CrabPartProjectile>();
-        if (proj == null) proj = seg.gameObject.AddComponent<CrabPartProjectile>();
+        if (proj == null)
+            proj = seg.gameObject.AddComponent<CrabPartProjectile>();
 
         proj.Configure(segRb, segCol, explodeOnLayers, maxBounces, maxLifetime);
         proj.Activate(launchVel);
@@ -91,7 +119,9 @@ public class CrabChainDetacher : MonoBehaviour
 
     private Rigidbody EnsureRigidbody(GameObject go)
     {
-        var rb = go.GetComponent<Rigidbody>() ?? go.AddComponent<Rigidbody>();
+        var rb = go.GetComponent<Rigidbody>();
+        if (rb == null)
+            rb = go.AddComponent<Rigidbody>();
 
         rb.mass = rbMass;
         rb.drag = rbDrag;
@@ -106,7 +136,7 @@ public class CrabChainDetacher : MonoBehaviour
 
     private Collider EnsureCollider(GameObject go)
     {
-        Collider col = go.GetComponent<Collider>();
+        var col = go.GetComponent<Collider>();
 
         if (col == null)
         {
@@ -117,7 +147,8 @@ public class CrabChainDetacher : MonoBehaviour
         }
 
         col.isTrigger = false;
-        if (bounceMaterial != null) col.material = bounceMaterial;
+        if (bounceMaterial != null)
+            col.material = bounceMaterial;
 
         return col;
     }

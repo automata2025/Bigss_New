@@ -18,8 +18,8 @@ public class CrabPartProjectile : MonoBehaviour
 
     private bool _active;
 
-   
-    private static readonly List<ICrabImpactHandler> HandlerCache = new List<ICrabImpactHandler>(8);
+    private static readonly List<ICrabImpactHandler> HandlerCache =
+        new List<ICrabImpactHandler>(8);
 
     private void Awake()
     {
@@ -33,6 +33,7 @@ public class CrabPartProjectile : MonoBehaviour
         _bounceCount = 0;
         _active = false;
     }
+
 
     public void Configure(
         Rigidbody rb,
@@ -52,7 +53,9 @@ public class CrabPartProjectile : MonoBehaviour
     {
         if (_rb == null || _col == null)
         {
-            Debug.LogWarning($"{nameof(CrabPartProjectile)} on {name} activated without Rigidbody/Collider.");
+            Debug.LogError(
+                "CrabPartProjectile.Activate called but Rigidbody or Collider is null.",
+                this);
             return;
         }
 
@@ -83,13 +86,14 @@ public class CrabPartProjectile : MonoBehaviour
         if (!_active) return;
 
         int otherLayer = collision.collider.gameObject.layer;
-        bool isExplodeLayer = ((_explodeMask.value & (1 << otherLayer)) != 0);
+        bool shouldExplode =
+            (_explodeMask.value & (1 << otherLayer)) != 0;
 
         ContactPoint contact = collision.GetContact(0);
         Vector3 hitPoint = contact.point;
         Vector3 hitNormal = contact.normal;
 
-        if (isExplodeLayer)
+        if (shouldExplode)
         {
             Explode(hitPoint, hitNormal, collision.collider);
             return;
@@ -113,9 +117,9 @@ public class CrabPartProjectile : MonoBehaviour
             point: point,
             normal: normal,
             incomingVel: incomingVel,
-            energy: 1f,
+            energy: 1f,         
             radius: 0f,
-            instigator: gameObject,
+            instigator: null,    
             projectile: gameObject
         );
 
@@ -126,7 +130,7 @@ public class CrabPartProjectile : MonoBehaviour
                 this);
         }
 
-        NotifyHandlersOnCollider(directHit, ctx);
+        NotifyHandlers(directHit, ctx);
 
         if (_rb != null)
             _rb.isKinematic = true;
@@ -134,12 +138,7 @@ public class CrabPartProjectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Explode()
-    {
-        Explode(transform.position, -transform.forward, null);
-    }
-
-    private static void NotifyHandlersOnCollider(Collider col, CrabImpactContext ctx)
+    private static void NotifyHandlers(Collider col, CrabImpactContext ctx)
     {
         if (col == null) return;
 
@@ -152,4 +151,3 @@ public class CrabPartProjectile : MonoBehaviour
         HandlerCache.Clear();
     }
 }
-
