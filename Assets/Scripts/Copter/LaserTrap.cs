@@ -3,9 +3,10 @@ using System.Collections;
 
 public class LaserTrap : MonoBehaviour
 {
-    public GameObject laserBeam;   // assign your red cube or beam here
-    public float onDuration = 3f;
-    public float offDuration = 3f;
+    [Header("Assign your laser")]
+    [SerializeField] public GameObject laserBeam;   // assign your red cube or beam here
+    [SerializeField] public float onDuration = 3f;
+    [SerializeField] public float offDuration = 3f;
 
     void Start()
     {
