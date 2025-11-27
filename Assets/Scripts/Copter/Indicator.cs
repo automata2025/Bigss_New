@@ -1,11 +1,31 @@
 using UnityEngine;
+using System.Collections;
 
 public class Indicator : MonoBehaviour
 {
-    // === Properties ===
-    public float BlinkDuration { get; set; } = 4f;   // blink time
-    public float WaitDuration { get; set; } = 2f;   // off time
-    public float BlinkSpeed { get; set; } = 0.2f; // toggle speed
+    [Header("Blink Settings")]
+    [SerializeField] private float blinkDuration = 4f;   // How long blinking lasts
+    [SerializeField] private float waitDuration = 2f;    // Time the light stays fully off
+    [SerializeField] private float blinkSpeed = 0.2f;    // How fast it toggles on/off
+
+    // Public properties (optional but useful)
+    public float BlinkDuration
+    {
+        get => blinkDuration;
+        set => blinkDuration = Mathf.Max(0f, value);
+    }
+
+    public float WaitDuration
+    {
+        get => waitDuration;
+        set => waitDuration = Mathf.Max(0f, value);
+    }
+
+    public float BlinkSpeed
+    {
+        get => blinkSpeed;
+        set => blinkSpeed = Mathf.Max(0.01f, value);
+    }
 
     private Renderer _renderer;
 
@@ -15,24 +35,24 @@ public class Indicator : MonoBehaviour
         StartCoroutine(BlinkLoop());
     }
 
-    private System.Collections.IEnumerator BlinkLoop()
+    private IEnumerator BlinkLoop()
     {
         while (true)
         {
-            // --- BLINK for BlinkDuration seconds ---
+            // BLINK for blinkDuration seconds
             float timer = 0f;
-            while (timer < BlinkDuration)
+            while (timer < blinkDuration)
             {
                 _renderer.enabled = !_renderer.enabled;
-                yield return new WaitForSeconds(BlinkSpeed);
-                timer += BlinkSpeed;
+                yield return new WaitForSeconds(blinkSpeed);
+                timer += blinkSpeed;
             }
 
-            // fully OFF after blinking
+            // Ensure OFF after blink phase
             _renderer.enabled = false;
 
-            // --- WAIT ---
-            yield return new WaitForSeconds(WaitDuration);
+            // WAIT fully off
+            yield return new WaitForSeconds(waitDuration);
         }
     }
 }

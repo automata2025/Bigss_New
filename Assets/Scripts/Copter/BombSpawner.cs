@@ -11,8 +11,9 @@ public class BombSpawner : MonoBehaviour
     [Header("Drop Settings")]
     [SerializeField] private float dropHeight = 20f;
 
-    [Header("Interval Settings")]
-    [SerializeField] private float dropInterval = 7f;
+    [Header("Timing Settings")]
+    [SerializeField] private float offDuration = 2f;     // Time before bombs drop
+    [SerializeField] private float dropInterval = 4f;    // Time after bombs drop before dropping again
 
     [Header("References")]
     [SerializeField] private BombPool bombPool;
@@ -42,10 +43,16 @@ public class BombSpawner : MonoBehaviour
         set => dropHeight = value;
     }
 
+    public float OffDuration
+    {
+        get => offDuration;
+        set => offDuration = Mathf.Max(0f, value);
+    }
+
     public float DropInterval
     {
         get => dropInterval;
-        set => dropInterval = Mathf.Max(0.1f, value); // prevent 0
+        set => dropInterval = Mathf.Max(0.1f, value);
     }
 
     public BombPool BombPool
@@ -64,13 +71,18 @@ public class BombSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(dropInterval);
+            // WAIT before dropping (matches indicator "OFF" time)
+            yield return new WaitForSeconds(offDuration);
 
+            // DROP bombs
             DropBombGrid(new Vector3(
                 transform.position.x,
                 0f,
                 transform.position.z
             ));
+
+            // WAIT after dropping (matches indicator "BLINK" time)
+            yield return new WaitForSeconds(dropInterval);
         }
     }
 
