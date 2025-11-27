@@ -1,12 +1,16 @@
 using UnityEngine;
+
+/// <summary>
+/// Data describing a crab projectile impact.
+/// </summary>
 public readonly struct CrabImpactContext
 {
-    public Vector3 Point { get; }       
-    public Vector3 Normal { get; }      
-    public Vector3 IncomingVel { get; }  
-    public float Energy { get; }        
-    public float Radius { get; }        
-    public GameObject Instigator { get; } 
+    public Vector3 Point { get; }  
+    public Vector3 Normal { get; } 
+    public Vector3 IncomingVel { get; } 
+    public float Energy { get; }  
+    public float Radius { get; }  
+    public GameObject Instigator { get; }
     public GameObject Projectile { get; } 
 
     public CrabImpactContext(
@@ -27,4 +31,3 @@ public readonly struct CrabImpactContext
         Projectile = projectile;
     }
 }
-

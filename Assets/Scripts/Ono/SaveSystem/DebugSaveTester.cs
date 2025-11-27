@@ -14,7 +14,7 @@ public class DebugSaveTester : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             int randomScore = Random.Range(0, 1000);
-            SaveSystem.CurrentSave.debugScore = randomScore;
+            
             SaveSystem.Save();
 
             Debug.Log($"[DebugSaveTester] Random score generated and saved: {randomScore}");
@@ -24,7 +24,7 @@ public class DebugSaveTester : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             SaveSystem.Load();
-            Debug.Log($"[DebugSaveTester] Loaded score: {SaveSystem.CurrentSave.debugScore}");
+            
         }
     }
 }
