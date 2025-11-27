@@ -3,11 +3,11 @@ using UnityEngine;
 public class FlamethrowerTrap : MonoBehaviour
 {
     [Header("Rotation Settings")]
-    public float rotationSpeed = 60f;
+    [SerializeField] public float rotationSpeed = 60f;
 
     [Header("Flame Transform (your particle object)")]
-    public Transform flameObject;   // your existing flame particle
-    public Transform muzzleA;       // where the flame sits
+    [SerializeField] public Transform flameObject;   
+    [SerializeField] public Transform muzzleA;       
 
     private void Start()
     {
