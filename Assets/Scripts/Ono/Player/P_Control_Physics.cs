@@ -231,4 +231,12 @@ public class P_Control_Physics : MonoBehaviour
         GameObject crab = Instantiate(crabPrefab, rb.position, rb.rotation);
         crabPart.Add(crab);
     }
+
+    public void ResetMovement()
+    {
+        moveForce = Vector3.zero;
+        vInput = 0f;
+        hInput = 0f;
+    }
+
 }
