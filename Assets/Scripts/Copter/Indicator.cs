@@ -4,10 +4,11 @@ using System.Collections;
 public class Indicator : MonoBehaviour
 {
     [Header("Blink Settings")]
-    [SerializeField] private float blinkDuration = 4f;   
-    [SerializeField] private float waitDuration = 2f;    
-    [SerializeField] private float blinkSpeed = 0.2f;   
+    [SerializeField] private float blinkDuration = 4f;   // How long blinking lasts
+    [SerializeField] private float waitDuration = 2f;    // Time the light stays fully off
+    [SerializeField] private float blinkSpeed = 0.2f;    // How fast it toggles on/off
 
+    // Public properties (optional but useful)
     public float BlinkDuration
     {
         get => blinkDuration;

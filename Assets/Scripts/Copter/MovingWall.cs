@@ -3,7 +3,7 @@ using UnityEngine;
 public class MovingWall : MonoBehaviour
 {
     [SerializeField] private float speed = 2f;
-    [SerializeField] private bool isActive = false;
+    private bool isActive = false;
 
     public float Speed
     {

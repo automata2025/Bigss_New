@@ -4,13 +4,13 @@ public class Bomb : MonoBehaviour
 {
     [Header("Bomb Settings")]
     [SerializeField] private float _deactivateDelay = 0.2f;
-    [SerializeField] public float DeactivateDelay => _deactivateDelay;
+    public float DeactivateDelay => _deactivateDelay;
 
-    [SerializeField] private Rigidbody _rigidbody;
-    [SerializeField] private BombPool _pool;
+    private Rigidbody _rigidbody;
+    private BombPool _pool;
 
-    [SerializeField] public Rigidbody Rigidbody => _rigidbody;
-    [SerializeField] public BombPool Pool => _pool;
+    public Rigidbody Rigidbody => _rigidbody;
+    public BombPool Pool => _pool;
 
     private void Awake()
     {

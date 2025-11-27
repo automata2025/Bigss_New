@@ -4,10 +4,11 @@ using UnityEngine;
 public class BombPool : MonoBehaviour
 {
     [Header("Pooling Settings")]
-    [SerializeField] public GameObject bombPrefab;
-    [SerializeField] public int poolSize = 20;
-    [SerializeField] public Transform poolParent;
-    [SerializeField] private Queue<GameObject> poolQueue = new Queue<GameObject>();
+    public GameObject bombPrefab;
+    public int poolSize = 20;
+    public Transform poolParent;
+
+    private Queue<GameObject> poolQueue = new Queue<GameObject>();
 
     void Awake()
     {
