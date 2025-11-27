@@ -10,9 +10,8 @@ public static class SaveSystem
 
     private static bool _loaded;
 
-    // ---------------------------------------------------------
-    // BASIC LOAD / SAVE
-    // ---------------------------------------------------------
+
+
     public static void Load()
     {
         if (_loaded && CurrentSave != null)
@@ -25,15 +24,15 @@ public static class SaveSystem
 
             if (CurrentSave == null)
             {
-                Debug.LogWarning("[SaveSystem] Save file was broken, creating new save.");
+                Debug.LogWarning("[SaveSystem] Save file broken, creating new save.");
                 CurrentSave = CreateNewSave();
             }
         }
         else
         {
-            Debug.Log("[SaveSystem] No save file found, creating new save.");
+            Debug.Log("[SaveSystem] No save file, creating new.");
             CurrentSave = CreateNewSave();
-            Save(); // write first file
+            Save();
         }
 
         _loaded = true;
@@ -50,75 +49,81 @@ public static class SaveSystem
         Debug.Log($"[SaveSystem] Saved to {SavePath}");
     }
 
-    // ---------------------------------------------------------
-    // LEVEL HELPERS
-    // ---------------------------------------------------------
 
-    /// <summary>
-    /// Save the result for this level.
-    /// levelIndex is 1-based (Level1 = 1, Level2 = 2, etc).
-    /// </summary>
     public static void SaveLevelResult(string levelId, int levelIndex, float clearTime, int stars)
     {
         Load();
 
-        // Ensure positive index
         levelIndex = Mathf.Max(1, levelIndex);
 
         bool previouslyCleared = false;
+        bool changed = false;
 
-        // Get or create the level entry
         LevelSaveData level = CurrentSave.GetOrCreateLevel(levelId, levelIndex);
         if (level != null)
         {
             previouslyCleared = level.cleared;
-            level.ApplyResult(clearTime, stars);
+            // ApplyResult returns true only if bestTime/bestStars improved
+            changed = level.ApplyResult(clearTime, stars);
         }
 
-        // Unlock next level if this is newly cleared and matches progression
+        // Unlock next level if this is newly cleared
         if (!previouslyCleared && level != null && level.cleared)
         {
-            // Example rule: if you beat level N and it's the highest,
-            // unlock levelIndex+1
             if (levelIndex >= CurrentSave.lastUnlockedLevelIndex)
             {
                 CurrentSave.lastUnlockedLevelIndex = levelIndex + 1;
+                changed = true; // progression changed
             }
         }
 
-        Save();
+        if (changed)
+        {
+            Save();
+        }
+        else
+        {
+            Debug.Log("[SaveSystem] Run did not beat best score/time; save not updated.");
+        }
     }
 
-    /// <summary>
-    /// Find level data by id (may return null if not present yet).
-    /// </summary>
     public static LevelSaveData GetLevelData(string levelId)
     {
         Load();
         return CurrentSave.FindLevel(levelId);
     }
 
-    /// <summary>
-    /// Is a given level index (1-based) unlocked?
-    /// </summary>
     public static bool IsLevelUnlocked(int levelIndex)
     {
         Load();
         return levelIndex <= CurrentSave.lastUnlockedLevelIndex;
     }
 
-    // ---------------------------------------------------------
-    // INTERNAL
-    // ---------------------------------------------------------
+    public static void ClearSave()
+    {
+        // Delete file on disk if exists
+        if (File.Exists(SavePath))
+        {
+            File.Delete(SavePath);
+            Debug.Log("[SaveSystem] Save file deleted.");
+        }
+
+        // Reset in-memory data
+        CurrentSave = CreateNewSave();
+        _loaded = true;
+
+        // Immediately write a fresh save file
+        Save();
+    }
 
     private static SaveData CreateNewSave()
     {
         var data = new SaveData();
 
-        // Level 1 unlocked by default
+        // Start with only Level1 unlocked
         data.lastUnlockedLevelIndex = 1;
 
-        // Pre-create 4 levels (you can change this number)
+        // Pre-create 4 levels: Level1..Level4
         for (int i = 0; i < 4; i++)
         {
             string id = $"Level{i + 1}";

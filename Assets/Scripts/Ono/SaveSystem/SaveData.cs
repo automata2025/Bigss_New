@@ -5,12 +5,12 @@ using UnityEngine;
 [Serializable]
 public class LevelSaveData
 {
-    public string levelId;     
+    public string levelId;      
     public int levelIndex;     
 
     public bool cleared;
-    public float bestTime;     
-    public int bestStars;     
+    public float bestTime; 
+    public int bestStars;      
 
     public LevelSaveData(string id, int index)
     {
@@ -21,19 +21,25 @@ public class LevelSaveData
         bestStars = 0;
     }
 
-    public void ApplyResult(float clearTime, int stars)
+    public bool ApplyResult(float clearTime, int stars)
     {
+        bool changed = false;
+
         cleared = true;
 
         if (bestTime <= 0f || clearTime < bestTime)
         {
             bestTime = clearTime;
+            changed = true;
         }
 
         if (stars > bestStars)
         {
             bestStars = stars;
+            changed = true;
         }
+
+        return changed;
     }
 }
 
@@ -42,12 +48,10 @@ public class SaveData
 {
     public int lastUnlockedLevelIndex = 1;  
 
-    // All level records
     public List<LevelSaveData> levels = new List<LevelSaveData>();
 
     public LevelSaveData GetOrCreateLevel(string levelId, int levelIndex)
     {
-        // Find by id
         for (int i = 0; i < levels.Count; i++)
         {
             if (levels[i].levelId == levelId)
