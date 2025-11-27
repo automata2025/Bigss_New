@@ -3,7 +3,8 @@ using UnityEngine;
 public class LevelStarCounter : MonoBehaviour
 {
     public int maxStars = 3;
-    public GameObject[] starObject;
+
+    public GameObject[] starIcons; // size = 3
 
     public int CurrentStars { get; private set; }
 
@@ -25,13 +26,13 @@ public class LevelStarCounter : MonoBehaviour
 
     private void UpdateHud()
     {
-        if (starObject == null) return;
+        if (starIcons == null) return;
 
-        for (int i = 0; i < starObject.Length; i++)
+        for (int i = 0; i < starIcons.Length; i++)
         {
-            if (starObject[i] != null)
+            if (starIcons[i] != null)
             {
-                starObject[i].SetActive(i < CurrentStars);
+                starIcons[i].SetActive(i < CurrentStars);
             }
         }
     }
