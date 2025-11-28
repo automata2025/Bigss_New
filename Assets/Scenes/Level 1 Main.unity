@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 45411324}
   m_Layer: 0
   m_Name: Cylinder (3)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11773,15 +11773,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 468454, guid: 704795cfbb02b844591f900d2b76342e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.58
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 468454, guid: 704795cfbb02b844591f900d2b76342e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.91
+      value: -15.28
       objectReference: {fileID: 0}
     - target: {fileID: 468454, guid: 704795cfbb02b844591f900d2b76342e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.37
+      value: -2.95
       objectReference: {fileID: 0}
     - target: {fileID: 468454, guid: 704795cfbb02b844591f900d2b76342e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12223,7 +12223,7 @@ GameObject:
   - component: {fileID: 134527263}
   m_Layer: 0
   m_Name: Cube (18)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12237,7 +12237,7 @@ Transform:
   m_GameObject: {fileID: 134527261}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 9.21, y: 1.3999999, z: -1.51}
+  m_LocalPosition: {x: 9.54, y: 1.3999999, z: -1.51}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13017,7 +13017,7 @@ GameObject:
   - component: {fileID: 190527571}
   m_Layer: 0
   m_Name: Cube (21)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13128,7 +13128,7 @@ GameObject:
   - component: {fileID: 196528957}
   m_Layer: 0
   m_Name: Cube (28)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13142,7 +13142,7 @@ Transform:
   m_GameObject: {fileID: 196528955}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 21.39, y: 1.3999999, z: 4.63}
+  m_LocalPosition: {x: 21.15, y: 1.3999999, z: 5.42}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13486,9 +13486,10 @@ GameObject:
   - component: {fileID: 221164997}
   - component: {fileID: 221164999}
   - component: {fileID: 221164998}
+  - component: {fileID: 221165000}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13503,7 +13504,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.0200007}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.315654}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3816465}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 610362091}
@@ -18303,6 +18304,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &221165000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221164996}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200013, y: 2.4200006, z: 6.45}
+  m_Center: {x: -0.0000062456447, y: 0.000001993759, z: 4.4999995}
 --- !u!4 &231626666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429762, guid: 5409c9ff5a9c7b045a9809d71ccdcab8, type: 3}
@@ -23227,15 +23249,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -26.63
+      value: -17.95
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.3
+      value: 9.36
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.65
+      value: 46.62
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23908,9 +23930,10 @@ GameObject:
   - component: {fileID: 298221300}
   - component: {fileID: 298221302}
   - component: {fileID: 298221301}
+  - component: {fileID: 298221303}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23924,7 +23947,7 @@ Transform:
   m_GameObject: {fileID: 298221299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 1.02}
+  m_LocalPosition: {x: -0, y: -0, z: 1}
   m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.074793}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28725,6 +28748,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &298221303
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298221299}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200003, y: 2.4200008, z: 4.8199997}
+  m_Center: {x: 0.0000009981775, y: -0.00000010198121, z: 1.2000036}
 --- !u!1001 &304373752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28812,7 +28856,7 @@ GameObject:
   - component: {fileID: 304572477}
   m_Layer: 0
   m_Name: Cube (31)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29132,7 +29176,7 @@ GameObject:
   - component: {fileID: 330366305}
   m_Layer: 0
   m_Name: Cube (28)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29311,7 +29355,7 @@ GameObject:
   - component: {fileID: 331657526}
   m_Layer: 0
   m_Name: Cylinder (1)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29325,7 +29369,7 @@ Transform:
   m_GameObject: {fileID: 331657524}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 24.27, y: 0.15999997, z: 0.49999994}
+  m_LocalPosition: {x: 24.5, y: 0.14, z: 0.5}
   m_LocalScale: {x: 0.1270431, y: 2.4207623, z: 0.1270431}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29921,7 +29965,7 @@ GameObject:
   - component: {fileID: 375724591}
   m_Layer: 0
   m_Name: Cube (17)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30346,9 +30390,10 @@ GameObject:
   - component: {fileID: 394511258}
   - component: {fileID: 394511260}
   - component: {fileID: 394511259}
+  - component: {fileID: 394511261}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30362,7 +30407,7 @@ Transform:
   m_GameObject: {fileID: 394511257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 1.02}
+  m_LocalPosition: {x: 0.43, y: -0, z: 1.02}
   m_LocalScale: {x: 1.0747929, y: 1.0747929, z: 1.0747929}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35163,6 +35208,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &394511261
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394511257}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200015, y: 2.4200008, z: 8.420003}
+  m_Center: {x: 0.000001814706, y: -0.0000007384164, z: 3.0000038}
 --- !u!4 &395088862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 494716, guid: 6d0ae5f5c23439549bd89c4f13a43702, type: 3}
@@ -35182,7 +35248,7 @@ GameObject:
   - component: {fileID: 395138531}
   m_Layer: 0
   m_Name: Cube (22)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35196,7 +35262,7 @@ Transform:
   m_GameObject: {fileID: 395138529}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 9.77, y: 1.47, z: 8.27}
+  m_LocalPosition: {x: 9.77, y: 1.47, z: 8.43}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35815,9 +35881,10 @@ GameObject:
   - component: {fileID: 433791713}
   - component: {fileID: 433791715}
   - component: {fileID: 433791714}
+  - component: {fileID: 433791716}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40632,6 +40699,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &433791716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433791712}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200003, y: 2.420001, z: 8.419998}
+  m_Center: {x: 0.0000024954436, y: -0.0000024007202, z: 2.9999986}
 --- !u!1001 &434247310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45623,9 +45711,10 @@ GameObject:
   - component: {fileID: 451434926}
   - component: {fileID: 451434928}
   - component: {fileID: 451434927}
+  - component: {fileID: 451434929}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50440,6 +50529,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &451434929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451434925}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200003, y: 2.4200008, z: 4.8199997}
+  m_Center: {x: 0.0000043360374, y: -0.00000057881834, z: 1.2000017}
 --- !u!4 &451459659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 482504, guid: b55c5c89af6466b4eac975ed5d76d2cb, type: 3}
@@ -60682,7 +60792,7 @@ GameObject:
   - component: {fileID: 506419617}
   m_Layer: 0
   m_Name: Cube (20)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71243,7 +71353,7 @@ GameObject:
   - component: {fileID: 562312428}
   m_Layer: 0
   m_Name: Cylinder (2)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71257,7 +71367,7 @@ Transform:
   m_GameObject: {fileID: 562312426}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 23.911003, y: 0.16, z: 0.5}
+  m_LocalPosition: {x: 24.14, y: 0.14, z: 0.5}
   m_LocalScale: {x: 0.1270431, y: 2.4207623, z: 0.1270431}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -71347,9 +71457,10 @@ GameObject:
   - component: {fileID: 564346368}
   - component: {fileID: 564346370}
   - component: {fileID: 564346369}
+  - component: {fileID: 564346371}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76164,6 +76275,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &564346371
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564346367}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200003, y: 2.4200008, z: 4.8199997}
+  m_Center: {x: -0.00000043233405, y: -0.00000085169313, z: 1.1999979}
 --- !u!1 &565139435
 GameObject:
   m_ObjectHideFlags: 0
@@ -76435,7 +76567,7 @@ GameObject:
   - component: {fileID: 572310476}
   m_Layer: 0
   m_Name: Cube (26)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76449,7 +76581,7 @@ Transform:
   m_GameObject: {fileID: 572310474}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 15.15, y: 1.3999999, z: 8.29}
+  m_LocalPosition: {x: 15.15, y: 1.4, z: 8.48}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76657,7 +76789,7 @@ GameObject:
   - component: {fileID: 579103850}
   m_Layer: 0
   m_Name: Cube (29)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76671,7 +76803,7 @@ Transform:
   m_GameObject: {fileID: 579103848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 9.89, y: 1.3999999, z: 3.99}
+  m_LocalPosition: {x: 9.89, y: 1.4, z: 4.02}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76992,7 +77124,7 @@ GameObject:
   - component: {fileID: 610362092}
   m_Layer: 0
   m_Name: Cube (29)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77141,7 +77273,7 @@ GameObject:
   - component: {fileID: 613015029}
   m_Layer: 0
   m_Name: Cube (25)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77155,7 +77287,7 @@ Transform:
   m_GameObject: {fileID: 613015027}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 10.01, y: 1.3999999, z: -1.51}
+  m_LocalPosition: {x: 10.34, y: 1.4, z: -1.51}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -77259,7 +77391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.27
+      value: -9.27
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.y
@@ -77267,7 +77399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.46
+      value: 9.12
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77477,9 +77609,10 @@ GameObject:
   - component: {fileID: 633822184}
   - component: {fileID: 633822186}
   - component: {fileID: 633822185}
+  - component: {fileID: 633822187}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77493,8 +77626,8 @@ Transform:
   m_GameObject: {fileID: 633822183}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 1.02}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.074793}
+  m_LocalPosition: {x: 0, y: -0, z: 0.72}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 0.57173795}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 579103849}
@@ -82294,6 +82427,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &633822187
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633822183}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.420001, y: 2.4200008, z: 8.420002}
+  m_Center: {x: -0.0000018609655, y: -0.00000042120826, z: 3.0000017}
 --- !u!1001 &635753315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83084,9 +83238,10 @@ GameObject:
   - component: {fileID: 698686809}
   - component: {fileID: 698686811}
   - component: {fileID: 698686810}
+  - component: {fileID: 698686812}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83101,7 +83256,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 1.02}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.074793}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 0.660643}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1425696721}
@@ -87901,6 +88056,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &698686812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698686808}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.420001, y: 2.4200006, z: 8.420002}
+  m_Center: {x: -0.0000023227205, y: -0.0000021115738, z: 3.0000083}
 --- !u!4 &702267353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 482504, guid: b55c5c89af6466b4eac975ed5d76d2cb, type: 3}
@@ -99298,15 +99474,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7d76b5563f554fb4dba6b7dbda97921e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.43
+      value: -1.23
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7d76b5563f554fb4dba6b7dbda97921e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.18
+      value: -0.93
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7d76b5563f554fb4dba6b7dbda97921e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.83
+      value: 9.04
       objectReference: {fileID: 0}
     - target: {fileID: 455846, guid: 7d76b5563f554fb4dba6b7dbda97921e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -105946,9 +106122,10 @@ GameObject:
   - component: {fileID: 969985122}
   - component: {fileID: 969985124}
   - component: {fileID: 969985123}
+  - component: {fileID: 969985125}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105963,7 +106140,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 1.02}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.074793}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 0.61783403}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 190527570}
@@ -110763,6 +110940,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &969985125
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969985121}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.420001, y: 2.4200006, z: 8.420003}
+  m_Center: {x: -0.000000428666, y: -0.0000014344575, z: 2.999999}
 --- !u!4 &973897493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 419854, guid: 67f6358a70929f943ae115f8b4bcf075, type: 3}
@@ -117856,7 +118054,7 @@ GameObject:
   - component: {fileID: 1142006731}
   m_Layer: 0
   m_Name: Cube (27)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118036,9 +118234,10 @@ GameObject:
   - component: {fileID: 1149696944}
   - component: {fileID: 1149696946}
   - component: {fileID: 1149696945}
+  - component: {fileID: 1149696947}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118053,7 +118252,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.0200007}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3417715}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3486811}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 304572476}
@@ -122853,6 +123052,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1149696947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149696943}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200017, y: 2.4200008, z: 6.45}
+  m_Center: {x: -0.0000003131745, y: 0.00000080934404, z: 4.5000014}
 --- !u!1001 &1152709309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125327,9 +125547,10 @@ GameObject:
   - component: {fileID: 1332757389}
   - component: {fileID: 1332757391}
   - component: {fileID: 1332757390}
+  - component: {fileID: 1332757392}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130144,6 +130365,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1332757392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332757388}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.420001, y: 2.4200008, z: 8.420002}
+  m_Center: {x: -0.0000009072912, y: -0.0000008980454, z: 3.0000064}
 --- !u!4 &1334686555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 455846, guid: 7d76b5563f554fb4dba6b7dbda97921e, type: 3}
@@ -136003,7 +136245,7 @@ GameObject:
   - component: {fileID: 1425696722}
   m_Layer: 0
   m_Name: Cube (19)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141152,9 +141394,10 @@ GameObject:
   - component: {fileID: 1462989189}
   - component: {fileID: 1462989191}
   - component: {fileID: 1462989190}
+  - component: {fileID: 1462989192}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141169,7 +141412,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.0200007}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3584309}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3364353}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1632122696}
@@ -145969,6 +146212,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1462989192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462989188}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200017, y: 2.4200008, z: 6.45}
+  m_Center: {x: -0.000003176099, y: 0.00000081219616, z: 4.499998}
 --- !u!1001 &1468473004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -147251,7 +147515,7 @@ GameObject:
   - component: {fileID: 1545673881}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152691,9 +152955,10 @@ GameObject:
   - component: {fileID: 1584022297}
   - component: {fileID: 1584022299}
   - component: {fileID: 1584022298}
+  - component: {fileID: 1584022300}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152707,8 +152972,8 @@ Transform:
   m_GameObject: {fileID: 1584022296}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.0200007}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.326617}
+  m_LocalPosition: {x: -0, y: -0, z: -0.05}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.5406606}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 330366304}
@@ -157508,6 +157773,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1584022300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584022296}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.77, y: 3.130001, z: 6.45}
+  m_Center: {x: 0.0000002392235, y: 0.0000028875215, z: 4.500003}
 --- !u!1001 &1585631154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157597,9 +157883,10 @@ GameObject:
   - component: {fileID: 1590985899}
   - component: {fileID: 1590985901}
   - component: {fileID: 1590985900}
+  - component: {fileID: 1590985902}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157614,7 +157901,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.0200007}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3422015}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3542769}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2122740281}
@@ -162414,6 +162701,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1590985902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590985898}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200006, y: 2.4200008, z: 6.45}
+  m_Center: {x: -0.0000016970655, y: 0.0000015232965, z: 4.5000014}
 --- !u!1 &1591242847
 GameObject:
   m_ObjectHideFlags: 0
@@ -162637,9 +162945,10 @@ GameObject:
   - component: {fileID: 1607096330}
   - component: {fileID: 1607096332}
   - component: {fileID: 1607096331}
+  - component: {fileID: 1607096333}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162654,7 +162963,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0, z: 1.02}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.074793}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 0.733342}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 506419616}
@@ -167454,6 +167763,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1607096333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607096329}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200008, y: 2.4200008, z: 8.420001}
+  m_Center: {x: -0.00000094148015, y: -0.0000011182129, z: 3.0000043}
 --- !u!1 &1609154831
 GameObject:
   m_ObjectHideFlags: 0
@@ -168166,7 +168496,7 @@ GameObject:
   - component: {fileID: 1632122697}
   m_Layer: 0
   m_Name: Cube (32)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168541,9 +168871,10 @@ GameObject:
   - component: {fileID: 1653114619}
   - component: {fileID: 1653114621}
   - component: {fileID: 1653114620}
+  - component: {fileID: 1653114622}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173358,6 +173689,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1653114622
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653114618}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200003, y: 2.420001, z: 8.419998}
+  m_Center: {x: 0.000003925955, y: -0.0000014470459, z: 2.9999986}
 --- !u!4 &1655036058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 488626, guid: 16cb051a8191e0649bc4c655ac511479, type: 3}
@@ -184523,9 +184875,10 @@ GameObject:
   - component: {fileID: 1799940729}
   - component: {fileID: 1799940731}
   - component: {fileID: 1799940730}
+  - component: {fileID: 1799940732}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184539,8 +184892,8 @@ Transform:
   m_GameObject: {fileID: 1799940728}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.0200007}
-  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.3732629}
+  m_LocalPosition: {x: 0, y: 0.00000014901, z: -2.1381}
+  m_LocalScale: {x: 1.074793, y: 1.074793, z: 1.8282014}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1142006730}
@@ -189340,6 +189693,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1799940732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799940728}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.420001, y: 2.4200008, z: 6.45}
+  m_Center: {x: 0.0000015805008, y: 0.0000027715164, z: 4.499996}
 --- !u!1001 &1806035586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191111,7 +191485,7 @@ GameObject:
   - component: {fileID: 1880499779}
   m_Layer: 0
   m_Name: Cube (23)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192321,7 +192695,7 @@ GameObject:
   - component: {fileID: 1944584236}
   m_Layer: 0
   m_Name: Cube (24)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199643,6 +200017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9013051769820162146, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
+      propertyPath: crabAmounts
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -204813,7 +205191,7 @@ GameObject:
   - component: {fileID: 2122740282}
   m_Layer: 0
   m_Name: Cube (30)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205065,7 +205443,7 @@ GameObject:
   - component: {fileID: 2129597520}
   m_Layer: 0
   m_Name: Cube (27)
-  m_TagString: Untagged
+  m_TagString: Hazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

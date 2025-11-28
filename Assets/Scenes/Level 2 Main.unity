@@ -10327,6 +10327,7 @@ GameObject:
   - component: {fileID: 158180840}
   - component: {fileID: 158180842}
   - component: {fileID: 158180841}
+  - component: {fileID: 158180843}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -15144,6 +15145,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &158180843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158180839}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7, y: 2.42, z: 6.45}
+  m_Center: {x: 0, y: -0.00000047683716, z: 2.7}
 --- !u!1 &180013783
 GameObject:
   m_ObjectHideFlags: 0
@@ -15155,6 +15177,7 @@ GameObject:
   - component: {fileID: 180013784}
   - component: {fileID: 180013786}
   - component: {fileID: 180013785}
+  - component: {fileID: 180013787}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -19972,6 +19995,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &180013787
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180013783}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7, y: 2.42, z: 6.45}
+  m_Center: {x: 0.0000019073486, y: -0.00000047683716, z: 2.7}
 --- !u!1 &183240553
 GameObject:
   m_ObjectHideFlags: 0
@@ -40631,6 +40675,7 @@ GameObject:
   - component: {fileID: 495207108}
   - component: {fileID: 495207110}
   - component: {fileID: 495207109}
+  - component: {fileID: 495207111}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -45448,6 +45493,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &495207111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495207107}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200006, y: 2.42, z: 6.45}
+  m_Center: {x: -0.0000009536743, y: -0.00000047683716, z: 2.73}
 --- !u!1001 &506358011
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45537,6 +45603,7 @@ GameObject:
   - component: {fileID: 507921733}
   - component: {fileID: 507921735}
   - component: {fileID: 507921734}
+  - component: {fileID: 507921736}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Hazard
@@ -50354,6 +50421,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &507921736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507921732}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.42, y: 2.42, z: 11.420001}
+  m_Center: {x: -0.0000019073486, y: -0.00000047683716, z: 4.5000014}
 --- !u!1 &529309500
 GameObject:
   m_ObjectHideFlags: 0
@@ -82037,6 +82125,7 @@ GameObject:
   - component: {fileID: 1163597286}
   - component: {fileID: 1163597288}
   - component: {fileID: 1163597287}
+  - component: {fileID: 1163597289}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -86854,6 +86943,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1163597289
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163597285}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200006, y: 2.42, z: 6.45}
+  m_Center: {x: 0.00000095367426, y: -0.00000047683716, z: 4.5000052}
 --- !u!1001 &1171113552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -87567,6 +87677,7 @@ GameObject:
   - component: {fileID: 1336562702}
   - component: {fileID: 1336562704}
   - component: {fileID: 1336562703}
+  - component: {fileID: 1336562705}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -92384,6 +92495,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1336562705
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336562701}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.4200006, y: 2.42, z: 6.45}
+  m_Center: {x: 0.000002861023, y: -0.00000047683716, z: 2.73}
 --- !u!1 &1351451491
 GameObject:
   m_ObjectHideFlags: 0
@@ -113635,6 +113767,7 @@ GameObject:
   - component: {fileID: 1795067159}
   - component: {fileID: 1795067161}
   - component: {fileID: 1795067160}
+  - component: {fileID: 1795067162}
   m_Layer: 0
   m_Name: Flame
   m_TagString: Untagged
@@ -118452,6 +118585,27 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!65 &1795067162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795067158}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7, y: 2.42, z: 6.45}
+  m_Center: {x: 0, y: -0.00000047683716, z: 2.73}
 --- !u!1 &1806635851
 GameObject:
   m_ObjectHideFlags: 0
