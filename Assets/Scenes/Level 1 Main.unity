@@ -61480,6 +61480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Trap_Wallslab_Spikes_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 196148, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
+      propertyPath: m_TagString
+      value: Hazard
+      objectReference: {fileID: 0}
     - target: {fileID: 493656, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7849292
@@ -76802,14 +76806,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579103848}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 9.89, y: 1.4, z: 4.02}
+  m_LocalRotation: {x: -0.000000044703484, y: -0.6990413, z: -0, w: -0.71508133}
+  m_LocalPosition: {x: 5.1590824, y: 1.3999996, z: 3.8523746}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 633822184}
   m_Father: {fileID: 813490510}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -271.3, z: 0}
 --- !u!65 &579103850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83018,6 +83022,10 @@ PrefabInstance:
     - target: {fileID: 196148, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
       propertyPath: m_Name
       value: SM_Env_Trap_Wallslab_Spikes_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 196148, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
+      propertyPath: m_TagString
+      value: Hazard
       objectReference: {fileID: 0}
     - target: {fileID: 493656, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
       propertyPath: m_LocalScale.x
@@ -100059,6 +100067,10 @@ PrefabInstance:
     - target: {fileID: 196148, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
       propertyPath: m_Name
       value: SM_Env_Trap_Wallslab_Spikes_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 196148, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
+      propertyPath: m_TagString
+      value: Hazard
       objectReference: {fileID: 0}
     - target: {fileID: 493656, guid: 37651b7bfe034f34c8e2120c52b8aae6, type: 3}
       propertyPath: m_LocalScale.x
@@ -135999,7 +136011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 177812, guid: 16cb051a8191e0649bc4c655ac511479, type: 3}
       propertyPath: m_TagString
-      value: Hazard
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 488626, guid: 16cb051a8191e0649bc4c655ac511479, type: 3}
       propertyPath: m_LocalScale.x
