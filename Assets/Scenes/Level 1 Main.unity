@@ -23227,7 +23227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.36
+      value: -26.63
       objectReference: {fileID: 0}
     - target: {fileID: 2040339058680680489, guid: 2f12571d6f332c54a91e50e802067823, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29560,7 +29560,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
@@ -71502,7 +71502,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 2
@@ -153145,7 +153145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -207.00002}
+  m_AnchoredPosition: {x: 0, y: -207}
   m_SizeDelta: {x: 1200, y: -266.4459}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1582683265
@@ -200173,6 +200173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7129451930308481260, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
+      propertyPath: m_TagString
+      value: Hazard
+      objectReference: {fileID: 0}
     - target: {fileID: 8042300236970506127, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -206227,8 +206231,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1599497116425691560, guid: a93cb40b7a3a0d54ab26903a40ab7ea8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85266906
+      objectReference: {fileID: 0}
+    - target: {fileID: 1599497116425691560, guid: a93cb40b7a3a0d54ab26903a40ab7ea8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.05
+      value: -20.31
       objectReference: {fileID: 0}
     - target: {fileID: 1599497116425691560, guid: a93cb40b7a3a0d54ab26903a40ab7ea8, type: 3}
       propertyPath: m_LocalPosition.y
