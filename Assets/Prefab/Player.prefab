@@ -4301,7 +4301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuRoot: {fileID: 2312575772901419799}
   pauseKey: 9
-  sceneActions: {fileID: 0}
+  sceneActions: {fileID: 5065771144371659914}
 --- !u!114 &4985167559994506321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4461,7 +4461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c13438496f08bd4eb85f4f9fc1e8f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crabAmounts: 2
+  crabAmounts: 5
   moveSpeed: 5
   steerAngle: 30
   Traction: 1

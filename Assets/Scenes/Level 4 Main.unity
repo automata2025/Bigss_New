@@ -151990,6 +151990,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4849136536821630705, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 1271759991}
     - target: {fileID: 4928324902978276495, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -152085,6 +152089,10 @@ PrefabInstance:
     - target: {fileID: 7971399052036110618, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276600165131845592, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
+      propertyPath: m_text
+      value: Final Stage Clear
       objectReference: {fileID: 0}
     - target: {fileID: 8276600165131845592, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       propertyPath: m_fontColor.b
@@ -152331,7 +152339,8 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7141938879002356894, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8997033300982528927, guid: ccb11a24d7b24c742b538b8836d335e2, type: 3}
       insertIndex: 2
@@ -157639,6 +157648,14 @@ PrefabInstance:
     - target: {fileID: 4534438583915736489, guid: 585746acdcf307d4390236e8032faf3c, type: 3}
       propertyPath: m_Name
       value: LevelLogic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623007767104036667, guid: 585746acdcf307d4390236e8032faf3c, type: 3}
+      propertyPath: levelId
+      value: Level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623007767104036667, guid: 585746acdcf307d4390236e8032faf3c, type: 3}
+      propertyPath: levelIndex
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9135731327726783849, guid: 585746acdcf307d4390236e8032faf3c, type: 3}
       propertyPath: m_LocalPosition.x
